@@ -1,0 +1,848 @@
+.wizard-content {
+  min-height: 400px;
+}
+
+::ng-deep .step-success .p-steps-item-label {
+  color: var(--green-500) !important;
+}
+
+::ng-deep .step-success .p-steps-number {
+  background-color: var(--green-500) !important;
+  color: #ffffff !important;
+}
+
+::ng-deep .step-success .p-steps-item-link:before {
+    border-color: var(--green-500) !important;
+}
+
+// Étape active en vert
+::ng-deep .step-active-green .p-steps-item-label {
+  color: var(--green-600) !important;
+  font-weight: bold;
+}
+::ng-deep .step-active-green .p-steps-number {
+  background-color: var(--green-600) !important;
+  color: #fff !important;
+  border: 2px solid var(--green-400) !important;
+}
+::ng-deep .step-active-green .p-steps-item-link:before {
+  border-color: var(--green-400) !important;
+}
+
+
+.fadeIn {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.field-checkbox {
+  margin-bottom: 1rem;
+  
+  label {
+    cursor: pointer;
+    
+    strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    
+    small {
+      color: var(--text-color-secondary);
+    }
+  }
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  &.border-green-200 {
+    border-color: #bbf7d0;
+  }
+  
+  &.border-blue-200 {
+    border-color: #bfdbfe;
+  }
+  
+  &.border-red-200 {
+    border-color: #fecaca;
+  }
+  
+  &.border-primary-200 {
+    border-color: var(--primary-200);
+  }
+}
+
+.bg-green-50 {
+  background-color: #f0fdf4;
+}
+
+.bg-blue-50 {
+  background-color: #eff6ff;
+}
+
+.bg-yellow-50 {
+  background-color: #fefce8;
+}
+
+.bg-red-50 {
+  background-color: #fef2f2;
+}
+
+.text-green-700 {
+  color: #15803d;
+}
+
+.text-green-600 {
+  color: #16a34a;
+}
+
+.text-blue-700 {
+  color: #1d4ed8;
+}
+
+.text-blue-600 {
+  color: #2563eb;
+}
+
+.text-yellow-700 {
+  color: #a16207;
+}
+
+.text-red-700 {
+  color: #b91c1c;
+}
+
+.text-red-600 {
+  color: #dc2626;
+}
+
+// ================================
+// STEPPER CUSTOMIZATION
+// ================================
+.compare-stepper {
+  .p-steps {
+    .p-steps-item {
+      .p-steps-number {
+        background: var(--primary-100);
+        color: var(--primary-700);
+        border: 2px solid var(--primary-200);
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      
+      .p-steps-title {
+        color: var(--text-color);
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+      
+      &.p-highlight {
+        .p-steps-number {
+          background: var(--primary-color);
+          color: var(--primary-color-text);
+          border-color: var(--primary-color);
+        }
+        
+        .p-steps-title {
+          color: var(--primary-color);
+          font-weight: 600;
+        }
+      }
+      
+      &:not(.p-disabled):hover {
+        .p-steps-number {
+          background: var(--primary-200);
+          border-color: var(--primary-300);
+        }
+      }
+    }
+  }
+}
+
+// ================================
+// FORM LAYOUT & STYLING
+// ================================
+.form-container {
+  max-width: 100%;
+  margin: 0 auto;
+  
+  .step-content {
+    padding: 2rem 1rem;
+    min-height: 500px;
+    
+    @media (max-width: 768px) {
+      padding: 1.5rem 0.5rem;
+    }
+  }
+}
+
+.form-grid {
+  display: grid;
+  gap: 1.5rem;
+  
+  &.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  &.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  &.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  
+  label {
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.875rem;
+    
+    .required {
+      color: var(--red-500);
+      margin-left: 0.25rem;
+    }
+    
+    .optional {
+      color: var(--text-color-secondary);
+      font-weight: normal;
+      font-size: 0.75rem;
+      margin-left: 0.5rem;
+    }
+  }
+  
+  .field-help {
+    font-size: 0.75rem;
+    color: var(--text-color-secondary);
+    margin-top: 0.25rem;
+  }
+  
+  .field-error {
+    font-size: 0.75rem;
+    color: var(--red-500);
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    
+    i {
+      font-size: 0.75rem;
+    }
+  }
+  
+  &.full-width {
+    grid-column: 1 / -1;
+  }
+  
+  &.span-2 {
+    grid-column: span 2;
+    
+    @media (max-width: 768px) {
+      grid-column: span 1;
+    }
+  }
+}
+
+// ================================
+// SECTION STYLING
+// ================================
+.form-section {
+  margin-bottom: 2rem;
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--surface-border);
+    
+    .section-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--primary-100);
+      color: var(--primary-700);
+      font-size: 1.25rem;
+    }
+    
+    .section-title {
+      flex: 1;
+      
+      h3 {
+        margin: 0;
+        color: var(--text-color);
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+      
+      p {
+        margin: 0.25rem 0 0 0;
+        color: var(--text-color-secondary);
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
+
+// ================================
+// CARD VARIATIONS
+// ================================
+.info-card {
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--surface-border);
+  background: var(--surface-card);
+  
+  &.info {
+    background: var(--blue-50);
+    border-color: var(--blue-200);
+    color: var(--blue-700);
+  }
+  
+  &.warning {
+    background: var(--yellow-50);
+    border-color: var(--yellow-200);
+    color: var(--yellow-700);
+  }
+  
+  &.success {
+    background: var(--green-50);
+    border-color: var(--green-200);
+    color: var(--green-700);
+  }
+  
+  &.error {
+    background: var(--red-50);
+    border-color: var(--red-200);
+    color: var(--red-700);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    
+    i {
+      font-size: 1.125rem;
+    }
+    
+    h4 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+  
+  .card-content {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+}
+
+// ================================
+// RISK ASSESSMENT SECTION
+// ================================
+.risk-section {
+  .risk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .risk-item {
+    padding: 1rem;
+    border: 1px solid var(--surface-border);
+    border-radius: 6px;
+    background: var(--surface-card);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      border-color: var(--primary-200);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    &.checked {
+      border-color: var(--primary-color);
+      background: var(--primary-50);
+      
+      .risk-header {
+        color: var(--primary-700);
+      }
+    }
+    
+    .risk-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+      
+      .p-checkbox {
+        margin: 0;
+      }
+      
+      .risk-title {
+        font-weight: 600;
+        font-size: 0.9rem;
+        flex: 1;
+      }
+      
+      .risk-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--surface-100);
+        color: var(--text-color-secondary);
+        font-size: 0.75rem;
+      }
+    }
+    
+    .risk-description {
+      font-size: 0.8rem;
+      color: var(--text-color-secondary);
+      margin-left: 2rem;
+      line-height: 1.4;
+    }
+  }
+}
+
+// ================================
+// GUARANTEE SECTION
+// ================================
+.guarantee-section {
+  .guarantee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .guarantee-item {
+    padding: 1.5rem;
+    border: 2px solid var(--surface-border);
+    border-radius: 8px;
+    background: var(--surface-card);
+    position: relative;
+    
+    .guarantee-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      
+      .guarantee-name {
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--text-color);
+      }
+      
+      .guarantee-badge {
+        padding: 0.25rem 0.75rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        
+        &.required {
+          background: var(--red-100);
+          color: var(--red-700);
+        }
+        
+        &.optional {
+          background: var(--gray-100);
+          color: var(--gray-700);
+        }
+      }
+    }
+    
+    .guarantee-slider {
+      margin: 1rem 0;
+      
+      .slider-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        
+        span {
+          font-size: 0.875rem;
+          color: var(--text-color);
+        }
+        
+        .percentage {
+          font-weight: 600;
+          color: var(--primary-color);
+        }
+      }
+    }
+    
+    .guarantee-description {
+      font-size: 0.8rem;
+      color: var(--text-color-secondary);
+      line-height: 1.4;
+    }
+  }
+}
+
+// ================================
+// NAVIGATION BUTTONS
+// ================================
+.step-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--surface-border);
+  margin-top: 2rem;
+  
+  .nav-left {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .nav-right {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .p-button {
+    &.p-button-outlined {
+      border-width: 1px;
+    }
+    
+    &.p-button-lg {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+// ================================
+// LOADING STATES
+// ================================
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  
+  .loading-content {
+    text-align: center;
+    
+    .p-progress-spinner {
+      margin-bottom: 1rem;
+    }
+    
+    h4 {
+      margin: 0 0 0.5rem 0;
+      color: var(--text-color);
+    }
+    
+    p {
+      margin: 0;
+      color: var(--text-color-secondary);
+      font-size: 0.875rem;
+    }
+  }
+}
+
+// ================================
+// SUMMARY SECTION
+// ================================
+.summary-section {
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .summary-card {
+    padding: 1.5rem;
+    border: 1px solid var(--surface-border);
+    border-radius: 8px;
+    background: var(--surface-card);
+    
+    .summary-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      
+      .summary-icon {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--primary-100);
+        color: var(--primary-700);
+      }
+      
+      h4 {
+        margin: 0;
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--text-color);
+      }
+    }
+    
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--surface-100);
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      .item-label {
+        font-size: 0.875rem;
+        color: var(--text-color-secondary);
+      }
+      
+      .item-value {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--text-color);
+      }
+    }
+  }
+}
+
+// ================================
+// RESPONSIVE ADJUSTMENTS
+// ================================
+@media (max-width: 768px) {
+  .form-container {
+    .step-content {
+      padding: 1rem 0.5rem;
+    }
+  }
+  
+  .form-section {
+    .section-header {
+      .section-icon {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+      }
+      
+      .section-title {
+        h3 {
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+  
+  .step-navigation {
+    flex-direction: column;
+    gap: 1rem;
+    
+    .nav-left,
+    .nav-right {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  .risk-section {
+    .risk-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .guarantee-section {
+    .guarantee-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// ================================
+// ANIMATIONS
+// ================================
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-fade-enter-from {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.slide-fade-leave-to {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+// ================================
+// CUSTOM PRIMENG OVERRIDES
+// ================================
+.p-steps {
+  .p-steps-item {
+    .p-steps-connector {
+      background: var(--surface-200);
+    }
+    
+    &.p-highlight {
+      .p-steps-connector {
+        background: var(--primary-color);
+      }
+    }
+  }
+}
+
+.p-slider {
+  .p-slider-handle {
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    
+    &:focus {
+      box-shadow: 0 0 0 0.2rem var(--primary-color-text);
+    }
+  }
+  
+  .p-slider-range {
+    background: var(--primary-color);
+  }
+}
+
+.p-checkbox {
+  .p-checkbox-box {
+    &.p-highlight {
+      background: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+  }
+}
+
+.p-radiobutton {
+  .p-radiobutton-box {
+    &.p-highlight {
+      background: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+  }
+}
+
+// ================================
+// UTILITIES
+// ================================
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mt-2 {
+  margin-top: 0.5rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+.mt-3 {
+  margin-top: 1rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+
+.fw-bold {
+  font-weight: 600 !important;
+}
+
+.fw-normal {
+  font-weight: 400 !important;
+}
+
+/* Styles pour les sections du formulaire (Informations personnelles) */
+.form-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--surface-border);
+
+  &:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+}
+
+.form-section-title {
+  font-size: 1.15rem; /* Taille de police légèrement réduite pour un look plus subtil */
+  font-weight: 600;
+  color: var(--primary-color); /* Utilise la couleur primaire du thème */
+  margin-bottom: 1.5rem;
+  padding-left: 0.25rem; /* Léger retrait pour l'alignement */
+}
