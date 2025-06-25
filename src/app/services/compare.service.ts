@@ -33,6 +33,7 @@ export class CompareService {
 
     return this.http.post<ResultatComparaison[]>(this.apiUrl, needs, this.httpOptions)
       .pipe(
+        
         catchError(this.handleError.bind(this)),
         finalize(() => {
           this.loadingSubject.next(false);
